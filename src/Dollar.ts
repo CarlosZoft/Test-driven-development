@@ -1,5 +1,5 @@
 export class Dollar {
-  amount: number;
+  private readonly amount: number;
   constructor(amount: number) {
     this.amount = amount;
   }
