@@ -7,4 +7,9 @@ describe("Dollar tests", () => {
     product = five.times(3);
     expect(product.amount).toBe(15);
   });
+
+  it("should return true when $5 is compared to %5", () => {
+    expect(new Dollar(5).equals(new Dollar(5))).toBe(true);
+    expect(new Dollar(5).equals(new Dollar(6))).toBe(false);
+  });
 });
