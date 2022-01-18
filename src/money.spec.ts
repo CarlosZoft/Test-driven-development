@@ -14,8 +14,10 @@ describe("Money", () => {
     expect(five.times(3).equals(new Euro(15))).toBe(true);
   });
 
-  it("should return true when $5 is compared to %5", () => {
+  it("should return true when dollars and eutos of the same value are compared", () => {
     expect(new Dollar(5).equals(new Dollar(5))).toBe(true);
     expect(new Dollar(5).equals(new Dollar(6))).toBe(false);
+    expect(new Euro(5).equals(new Euro(5))).toBe(true);
+    expect(new Euro(5).equals(new Euro(6))).toBe(false);
   });
 });
