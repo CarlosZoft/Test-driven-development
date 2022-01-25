@@ -19,6 +19,7 @@ describe("Money", () => {
     expect(Money.euro(5).equals(Money.euro(5))).toBeTruthy();
     expect(Money.euro(5).equals(Money.euro(6))).toBeFalsy();
     expect(Money.euro(5).equals(Money.dollar(6))).toBeFalsy();
+    expect(new Money(5, "USD").equals(Money.dollar(5))).toBeTruthy();
   });
   it("Should correcly handle currencies", () => {
     expect(Money.dollar(1).currency()).toEqual("USD");
