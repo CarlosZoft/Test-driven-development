@@ -1,4 +1,6 @@
 import { Money } from "./Money";
+import { Expression } from './expression'
+import { Bank } from "./Bank";
 
 describe("Money", () => {
   it("Should handle dollar multiplication", () => {
@@ -17,4 +19,12 @@ describe("Money", () => {
     expect(Money.dollar(1).currency()).toEqual("USD");
     expect(Money.euro(1).currency()).toEqual("EUR");
   });
+
+  it("Should handle simple addition", () => {
+    const five: Money = Money.dollar(5)
+    const sum: Expression = five.plus(five)
+    const bank: Bank = new Bank();
+    const reduced: Money = bank.reduce(sum, 'USD')
+    expect(reduced.equals(Money.dollar(10))).toBeTruthy()
+  })
 });
