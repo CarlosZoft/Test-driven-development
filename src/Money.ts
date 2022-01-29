@@ -1,5 +1,5 @@
-import { Expression } from './expression'
-import { Sum } from './Sum';
+import { Expression } from "./expression";
+import { Sum } from "./Sum";
 
 export class Money implements Expression {
   private readonly _currency: string;
@@ -33,11 +33,15 @@ export class Money implements Expression {
     return new Sum(this, addend);
   }
 
+  reduce(to: string): Money {
+    return this;
+  }
+
   times(multiplier: number): Money {
     return new Money(this._amount * multiplier, this._currency);
   }
 
-  amount ():number {
+  amount(): number {
     return this._amount;
   }
 }
