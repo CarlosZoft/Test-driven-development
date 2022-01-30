@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests --watch --runInBand --no-cache"
+    "test": "jest --passWithNoTests --watch --runInBand --no-cache",
+    "test:ci": "jest"
   },
   "repository": {
     "type": "git",
